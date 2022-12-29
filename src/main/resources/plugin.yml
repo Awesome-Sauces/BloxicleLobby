@@ -1,0 +1,11 @@
+name: BloxicleLobby
+version: 1.0
+author: AwesomeSauce
+main: me.alpha.bloxicleLobby.BloxicleLobby
+api-version: 1.8
+depend: [Citizens,HolographicDisplays]
+commands:
+  play:
+    description: The Command for joining a game
+    usage: /<command>
+    aliases: testCommand

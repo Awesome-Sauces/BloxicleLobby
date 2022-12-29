@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+    maven { url "https://hub.spigotmc.org/nexus/content/groups/public/"}
+    maven { url "https://repo.codemc.io/repository/maven-public/"}
+    maven {url "https://hub.spigotmc.org/nexus/content/groups/public/"}
+    maven {url "https://repo.essentialsx.net/snapshots/"}
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' } // This lets gradle find the BungeeCord files online
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+
+    mavenLocal()
+}
+
+dependencies {
+
+    // Real Dependencies
+    compileOnly "org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT"
+    compileOnly "com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.9"
+    compileOnly "org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT"
+    compileOnly "net.citizensnpcs:citizensapi:2.0.30-SNAPSHOT"
+    //compileOnly 'net.md-5:bungeecord-api:1.8-SNAPSHOT'
+    compileOnly files("libs/Citizens-2.0.30-b2856.jar")
+
+
+
+    // Test stuff
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
